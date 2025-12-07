@@ -15,3 +15,9 @@ pre-commit install
 ```sh
 ./nextday.sh dayNumber
 ```
+
+## Run a day from console
+
+```sh
+./gradlew runDay -Pday=01
+```

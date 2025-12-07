@@ -4,7 +4,7 @@ data class Range2D(
   val rangeX: IntRange,
   val rangeY: IntRange,
 ) : Collection<Position> {
-  override fun contains(position: Position): Boolean = rangeX.contains(position.x) && rangeY.contains(position.y)
+  override fun contains(element: Position): Boolean = rangeX.contains(element.x) && rangeY.contains(element.y)
 
   override val size: Int = rangeX.count() * rangeY.count()
 

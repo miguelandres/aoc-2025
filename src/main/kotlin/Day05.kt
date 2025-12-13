@@ -4,7 +4,7 @@ import utils.removeLinesUntilBlankOrNull
 
 fun main() {
   val input = readAocInput(5, 1).toMutableList()
-  val freshRanges = input.removeLinesUntilBlankOrNull().map { parseLongRange(it) }.toList()
+  val freshRanges = input.removeLinesUntilBlankOrNull().map { it.parseLongRange() }.toList()
   val ids = input.map { it.toLong() }
 
   val part1 =

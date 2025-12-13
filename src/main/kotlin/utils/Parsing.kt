@@ -2,16 +2,6 @@ package utils
 
 import java.io.File
 
-fun parseRange(s: String): IntRange {
-  val parts = s.split("-").map { x -> x.toInt() }
-  return parts[0]..parts[1]
-}
-
-fun parseLongRange(s: String): LongRange {
-  val parts = s.split("-").map { x -> x.toLong() }
-  return parts[0]..parts[1]
-}
-
 private fun padInputNumber(n: Int) = n.toString().padStart(2, '0')
 
 fun readAocInput(
@@ -35,4 +25,18 @@ fun MutableList<String>.removeLinesUntilBlankOrNull(): List<String> {
     line = this.removeFirstOrNull()
   }
   return result
+}
+
+fun String.parseRange(): IntRange {
+  val parts = this.split("-").map { x -> x.toInt() }
+  return parts[0]..parts[1]
+}
+
+fun String.parseLongRange(): LongRange {
+  val parts = this.split("-").map { x -> x.toLong() }
+  return parts[0]..parts[1]
+}
+
+fun String.parsePosition(): Position {
+  this.split(",").map { it.toInt() }.let { Position(it[0], it[1]) }
 }

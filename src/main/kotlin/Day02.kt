@@ -33,7 +33,7 @@ fun main() {
     readAocInput(2, 1)
       .first()
       .split(",")
-      .map{ parseLongRange(it)}
+      .map{ it.parseLongRange()}
 
   val sumInvalidIdsPart1 =
     ranges.sumOf { range ->

@@ -12,16 +12,14 @@ fun main() {
       .map { s -> (if (s.startsWith("L")) -1 else 1) * s.substring(1).toInt() }
 
   val part1Result =
-    input.fold(LockCounter(50, 0), {
-        acc, move ->
+    input.fold(LockCounter(50, 0)) { acc, move ->
       val nextPointer = ((acc.lockPointer + move) % 100).let { if (it < 0) 100 + it else it }
       LockCounter(nextPointer, if (nextPointer == 0) acc.counter + 1 else acc.counter)
-    })
+    }
   println(part1Result)
 
   val part2Result =
-    input.fold(LockCounter(50, 0), {
-        acc, move ->
+    input.fold(LockCounter(50, 0)) { acc, move ->
       val sum = (acc.lockPointer + move)
       val count =
         if (sum <= 0) {
@@ -35,6 +33,6 @@ fun main() {
         }
       val nextPointer = (sum % 100).let { if (it < 0) 100 + it else it }
       LockCounter(nextPointer, count + acc.counter)
-    })
+    }
   println(part2Result)
 }

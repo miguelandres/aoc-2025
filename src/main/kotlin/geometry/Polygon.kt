@@ -3,10 +3,12 @@ package geometry
 import grid.Position
 import grid.PositionRectangle
 
+@Suppress("UNUSED")
 fun Rectangle.toPolygon(): Polygon {
   return Polygon.createFromPoints(this.cornerPoints)
 }
 
+@Suppress("UNUSED")
 fun PositionRectangle.toPolygon(): Polygon {
   return Polygon.createFromPositions(this.cornerPositions)
 }

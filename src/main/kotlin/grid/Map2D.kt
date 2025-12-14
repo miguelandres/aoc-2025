@@ -40,12 +40,14 @@ class Map2D<T>(
 
   override fun contains(element: T): Boolean = this.any { it == element }
 
+  @Suppress("UNUSED")
   fun forEachWithPosition(action: (pos: Position, value: T) -> Unit) {
     range.forEach { action(it, this[it]) }
   }
 
   fun <R> mapWithPosition(transform: (pos: Position, it: T) -> R): Iterable<R> = range.map { transform(it, this[it]) }
 
+  @Suppress("UNUSED")
   fun <R> flatMapWithPosition(transform: (pos: Position, it: T) -> Iterable<R>): Iterable<R> =
     range.flatMap { transform(it, this[it]) }
 }

@@ -3,7 +3,7 @@ import utils.readAocInput
 fun main() {
   val powerBanks =
     readAocInput(3, 1)
-      .map { it.map { it.digitToInt() } }
+      .map { str -> str.map { it.digitToInt() } }
 
   val part1 =
     powerBanks.sumOf {powerBank ->

@@ -71,7 +71,7 @@ fun main() {
     if (tree.contains(from) && tree.contains(to)) {
       // skip, no need to do anything
     } else {
-      // add to to the tree
+      // add to the tree
       tree = tree + setOf(to, from)
       if (tree.size == positions.size) {
         val part2Solution = positions[from].x * positions[to].x

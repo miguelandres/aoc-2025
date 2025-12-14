@@ -22,6 +22,7 @@ data class Rectangle(
     )
   }
 
+  @Suppress("UNUSED")
   val area: Double by lazy {
     abs(a.x - b.x) * abs(a.y - b.y)
   }

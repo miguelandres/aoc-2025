@@ -10,7 +10,7 @@ interface Operation<T : Number> {
 }
 
 enum class CephalopodOperation : Operation<Long> {
-  Multiply() {
+  Multiply {
     override fun apply(
       a: Long,
       b: Long,
@@ -34,7 +34,7 @@ fun main() {
   val numbersStr = lines.subList(0, lines.size - 1)
   val numbers =
     numbersStr.map {
-      it.trim().split(whitespaceRegex).map { if (it == "") 0L else it.toLong() }.toTypedArray()
+      it.trim().split(whitespaceRegex).map { numStr -> if (numStr == "") 0L else numStr.toLong() }.toTypedArray()
     }.toTypedArray().let {
       Map2D(it)
     }

@@ -11,6 +11,7 @@ data class Point(
   val x: Double,
   val y: Double,
 ) {
+  @Suppress("UNUSED")
   fun equalsWithEpsilon(
     other: Point,
     eps: Double = 1e-12,
@@ -18,6 +19,7 @@ data class Point(
     return abs(x - other.x) < eps && abs(y - other.y) < eps
   }
 
+  @Suppress("UNUSED")
   fun equalsWithEpsilon(
     other: Position,
     eps: Double = 1e-12,

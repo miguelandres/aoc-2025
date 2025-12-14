@@ -8,6 +8,7 @@ data class Position(
   val x: Int,
   val y: Int,
 ) {
+  @Suppress("UNUSED")
   fun cartesianLineTo(other: Position): List<Position>? =
     if (x == other.x) {
       (y.coerceAtMost(other.y)..y.coerceAtLeast(other.y)).map { i ->
@@ -21,6 +22,7 @@ data class Position(
       null
     }
 
+  @Suppress("UNUSED")
   fun forNeighborsInRange(
     range: Range2D,
     action: (Position) -> Unit,
@@ -31,6 +33,7 @@ data class Position(
       .forEach(action)
   }
 
+  @Suppress("UNUSED")
   fun <T> mapNeighborsInRange(
     range: Range2D,
     transform: (Position) -> T,
@@ -41,6 +44,7 @@ data class Position(
       .map(transform)
   }
 
+  @Suppress("UNUSED")
   fun forDiagonalNeighborsInRange(
     range: Range2D,
     action: (Position) -> Unit,
@@ -51,6 +55,7 @@ data class Position(
       .forEach(action)
   }
 
+  @Suppress("UNUSED")
   fun <T> mapDiagonalNeighborsInRange(
     range: Range2D,
     transform: (Position) -> T,
@@ -63,6 +68,7 @@ data class Position(
 
   fun manhattanDistance(other: Position) = abs(x - other.x) + abs(y - other.y)
 
+  @Suppress("UNUSED")
   fun pointsAtManhattanDistance(distance: Int): Set<Position> {
     val rangeX = -distance..distance
     return rangeX

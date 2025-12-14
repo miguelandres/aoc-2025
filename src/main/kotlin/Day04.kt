@@ -41,7 +41,7 @@ fun main() {
     }.sum()
   println(part1)
 
-  var hasModifiedMap = false
+  var hasModifiedMap: Boolean
   var iteration = 0
   var countRemoved = 0
   do {
@@ -50,7 +50,7 @@ fun main() {
       if (map[position] == PaperWarehouseContents.Roll) {
         val countNeighborsStillPresent =
           position.mapDiagonalNeighborsInRange(map.range){ neighborPos ->
-            when (val neighbor = map[neighborPos]) {
+            when (map[neighborPos]) {
               PaperWarehouseContents.Empty -> 0
               PaperWarehouseContents.Roll, PaperWarehouseContents.Removing -> 1
             }

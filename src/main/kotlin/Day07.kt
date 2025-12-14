@@ -62,11 +62,11 @@ fun main() {
       tachyonColumns.map {
         val pos = Position(it, y)
         map[pos].interact(it, map)
-      }.fold(emptySet<Int>()) { acc, cols -> acc + cols}
+      }.fold(emptySet()) { acc, cols -> acc + cols}
   }
   println(countSplits)
 
-  var beamCounter = mutableMapOf(startPosition.x to 1L).withDefault { 0L }
+  val beamCounter = mutableMapOf(startPosition.x to 1L).withDefault { 0L }
   for (y in (0..map.range.rangeY.last step 2)) {
     map.range.rangeX.forEach { x ->
       val position = Position(x, y)

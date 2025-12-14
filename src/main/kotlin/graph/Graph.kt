@@ -14,6 +14,7 @@ data class GraphNode<T>(
   val edgeMap: Map<String, GraphEdge> = edges.associateBy { it.destination },
 )
 
+@Suppress("UNUSED")
 fun <T> getAllDistancesFloydWarshall(nodes: List<GraphNode<T>>): Map<Pair<String, String>, Int> {
   val dist = hashMapOf<Pair<String, String>, Int>()
   val edges = nodes.flatMap { it.edges }

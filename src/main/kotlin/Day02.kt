@@ -7,10 +7,7 @@ fun isInvalidIdPart1(id: Long): Boolean {
     return false
   }
   val lastPart = idStr.substring(idStr.length / 2)
-  if (idStr == lastPart + lastPart) {
-    return true
-  }
-  return false
+  return idStr == lastPart + lastPart
 }
 
 fun isInvalidIdPart2(id: Long): Boolean {
@@ -21,7 +18,7 @@ fun isInvalidIdPart2(id: Long): Boolean {
       continue
     }
     val times = len / subStringLen
-    val subString = str.substring(0, subStringLen)
+    val subString = str.take(subStringLen)
     val generatedString = Array(times) { subString}.joinToString("")
     if (generatedString == str) return true
   }

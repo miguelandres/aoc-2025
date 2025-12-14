@@ -19,6 +19,7 @@ data class PositionRectangle(
     abs(a.x.toLong() - b.x.toLong() + 1) * abs(a.y.toLong() - b.y.toLong() + 1)
   }
 
+  @Suppress("UNUSED")
   fun isVerticalOrHorizontalLine(): Boolean {
     return (a.x == b.x) || (a.y == b.y)
   }

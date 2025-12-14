@@ -14,6 +14,7 @@ data class Position3D(
       (z - other.z).toDouble().pow(2)
   }
 
+  @Suppress("UNUSED")
   fun distanceTo(other: Position3D): Double {
     return sqrt(
       this.distanceSquared(other).toDouble(),

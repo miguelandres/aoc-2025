@@ -36,11 +36,13 @@ data class Line(
   }
 
   /** True if the lines share at least one point. */
+  @Suppress("UNUSED")
   fun intersectsAtLeastOnePoint(
     other: Line,
     eps: Double = 1e-12,
   ): Boolean = intersects(other, eps) || isCoincidentWith(other, eps)
 
+  @Suppress("UNUSED")
   fun intersectionPoint(
     other: Line,
     eps: Double = 1e-12,

@@ -25,6 +25,7 @@ open class SparseMap<T>(
   }
 }
 
+@Suppress("UNUSED")
 class DistanceAwareSparseMap<T>(
   private val defaultValue: T,
 ) : SparseMap<T>(defaultValue) {

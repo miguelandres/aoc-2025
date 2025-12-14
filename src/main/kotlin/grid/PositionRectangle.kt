@@ -9,13 +9,17 @@ data class PositionRectangle(
   val cornerPositions: List<Position> by lazy {
     listOf(
       a,
-      a.copy(y = b.y),
+      Position(a.x, b.y),
       b,
-      b.copy(y = a.y),
-    )
+      Position(b.x, a.y),
+    ).also { println(it)}
   }
 
-  fun area(): Long {
-    return abs(a.x.toLong() - b.x.toLong() + 1) * abs(a.y.toLong() - b.y.toLong() + 1)
+  val area: Long by lazy {
+    abs(a.x.toLong() - b.x.toLong() + 1) * abs(a.y.toLong() - b.y.toLong() + 1)
+  }
+
+  fun isVerticalOrHorizontalLine(): Boolean {
+    return (a.x == b.x) || (a.y == b.y)
   }
 }

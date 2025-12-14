@@ -14,13 +14,13 @@ data class Rectangle(
   val cornerPoints: List<Point> by lazy {
     listOf(
       a,
-      a.copy(y = b.y),
+      Point(a.x, b.y),
       b,
-      b.copy(y = a.y),
+      Point(b.x, a.y),
     )
   }
 
-  fun area(): Double {
-    return abs(a.x - b.x) * abs(a.y - b.y)
+  val area: Double by lazy {
+    abs(a.x - b.x) * abs(a.y - b.y)
   }
 }

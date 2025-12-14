@@ -38,5 +38,5 @@ fun String.parseLongRange(): LongRange {
 }
 
 fun String.parsePosition(): Position {
-  this.split(",").map { it.toInt() }.let { Position(it[0], it[1]) }
+  return this.split(",").map { it.toInt() }.let { Position(it[0], it[1]) }
 }

@@ -53,6 +53,13 @@ data class Line(
     return Point(x, y)
   }
 
+  fun contains(
+    point: Point,
+    eps: Double = 1e-12,
+  ): Boolean {
+    return abs(a * point.x + b * point.y + c) <= eps
+  }
+
   companion object {
     fun fromPoints(
       p1: Point,

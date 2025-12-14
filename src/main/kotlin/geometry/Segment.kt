@@ -7,4 +7,7 @@ data class Segment(
   val line: Line by lazy {
     this.toLine()
   }
+  val boundingRectangle: Rectangle by lazy {
+    Rectangle(a, b)
+  }
 }

@@ -3,10 +3,6 @@ package geometry
 import grid.Position
 import kotlin.math.abs
 
-fun Collection<Position>.toPoints(): List<Point> {
-  return this.map { it.toPoint() }
-}
-
 fun Position.toPoint(): Point {
   return Point.fromPosition(this)
 }

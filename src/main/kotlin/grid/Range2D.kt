@@ -1,4 +1,4 @@
-package utils
+package grid
 
 data class Range2D(
   val rangeX: IntRange,

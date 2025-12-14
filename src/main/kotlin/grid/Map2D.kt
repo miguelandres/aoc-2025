@@ -1,4 +1,4 @@
-package utils
+package grid
 
 class Map2D<T>(
   private val map: Array<Array<T>>,

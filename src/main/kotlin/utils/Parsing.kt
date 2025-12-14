@@ -1,5 +1,6 @@
 package utils
 
+import grid.Position
 import java.io.File
 
 private fun padInputNumber(n: Int) = n.toString().padStart(2, '0')

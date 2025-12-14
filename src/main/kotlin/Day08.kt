@@ -1,4 +1,4 @@
-import utils.Position3D
+import grid.Position3D
 import utils.readAocInput
 
 data class DistanceInfo(

@@ -1,5 +1,5 @@
-import utils.Map2D
-import utils.Position
+import grid.Map2D
+import grid.Position
 import utils.readAocInput
 
 interface TachyonInteraction {

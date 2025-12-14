@@ -1,4 +1,4 @@
-import utils.Map2D
+import grid.Map2D
 import utils.readAocInput
 
 enum class PaperWarehouseContents {

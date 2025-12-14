@@ -1,4 +1,4 @@
-package utils
+package grid
 
 enum class Direction(
   val deltaX: Int,

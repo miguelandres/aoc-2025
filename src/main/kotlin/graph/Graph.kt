@@ -1,4 +1,4 @@
-package utils
+package graph
 
 data class GraphEdge(
   val source: String,

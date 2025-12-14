@@ -1,4 +1,4 @@
-package utils
+package collections
 
 class CircularList<out T>(
   private val list: List<T>,
@@ -13,7 +13,7 @@ class CircularList<out T>(
   override fun get(index: Int): T = list[index.safely()]
 
   /**
-   * Get a [kotlin.collections.ListIterator] starting at the specified [index]
+   * Get a [ListIterator] starting at the specified [index]
    *
    * If the [index] is negative it is interpreted as an offset from the end of
    * the list. If the [index] is positive and beyond the bounds of the underlying list,

@@ -40,6 +40,7 @@ class CircularList<out T>(
    *
    * Unlike [circularIterator], it will keep the underlying indices within the bounds of the list.
    */
+  @Suppress("UNUSED")
   fun circularIteratorWrappingIndices(index: Int = 0): CircularIteratorWrappingIndices =
     CircularIteratorWrappingIndices(index)
 
@@ -95,4 +96,5 @@ class CircularList<out T>(
     }
 }
 
+@Suppress("UNUSED")
 fun <T> List<T>.circular(): CircularList<T> = CircularList(this)

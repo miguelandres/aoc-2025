@@ -12,7 +12,7 @@ data class PositionRectangle(
       Position(a.x, b.y),
       b,
       Position(b.x, a.y),
-    ).also { println(it)}
+    )
   }
 
   val area: Long by lazy {

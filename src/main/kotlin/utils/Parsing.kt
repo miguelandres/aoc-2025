@@ -10,10 +10,16 @@ fun readAocInput(
   part: Int = 1,
 ) = File("input/d${padInputNumber(day)}p${padInputNumber(part)}.txt").readLines()
 
-fun String.splitWithPrefix(
-  prefix: String,
+fun String.removeAffixes(
+  prefix: String = "",
+  suffix: String = "",
+) = this.removePrefix(prefix).removeSuffix(suffix)
+
+fun String.splitWithAffixes(
+  prefix: String = "",
   delimiter: String,
-) = this.drop(prefix.length).split(delimiter)
+  suffix: String = "",
+) = this.removePrefix(prefix).removeSuffix(suffix).split(delimiter)
 
 fun MutableList<String>.removeLinesUntilBlankOrNull(): List<String> {
   val result = mutableListOf<String>()
@@ -28,6 +34,7 @@ fun MutableList<String>.removeLinesUntilBlankOrNull(): List<String> {
   return result
 }
 
+@Suppress("UNUSED")
 fun String.parseRange(): IntRange {
   val parts = this.split("-").map { x -> x.toInt() }
   return parts[0]..parts[1]
